@@ -3,12 +3,11 @@ public class Recursive {
         if (n <= 1) {
             return n;
         }
-
         return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
     }
 
     public static void main(String[] args) {
-        int n = 2;
+        int n = 3;
         System.out.println("Fibonacci(" + n + ") = " + recursiveFibonacci(n));
     }
 }
