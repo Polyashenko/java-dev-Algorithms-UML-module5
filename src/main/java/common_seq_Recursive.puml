@@ -1,0 +1,27 @@
+@startuml
+title RecursiveFibonacci Calculation
+
+actor User
+participant RecursiveFibonacci
+User -> RecursiveFibonacci: iterativeFibonacci(n)
+activate RecursiveFibonacci
+alt n = 0
+RecursiveFibonacci --> User: Return 0
+end
+
+alt n = 1
+RecursiveFibonacci --> User: Return 1
+end
+
+RecursiveFibonacci -> RecursiveFibonacci: v1 = iterativeFibonacci(n - 1)
+activate RecursiveFibonacci
+deactivate RecursiveFibonacci
+
+RecursiveFibonacci -> RecursiveFibonacci: v2 = iterativeFibonacci(n - 2)
+activate RecursiveFibonacci
+deactivate RecursiveFibonacci
+
+RecursiveFibonacci --> User: Return v1 + v2
+deactivate RecursiveFibonacci
+
+@enduml
